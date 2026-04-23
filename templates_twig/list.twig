@@ -1,0 +1,26 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+
+<h2>Список привычек</h2>
+
+<table border="1" cellpadding="10">
+    <tr>
+        <th>Название</th>
+        <th>Категория</th>
+        <th>Приоритет</th>
+        <th>Дата</th>
+    </tr>
+
+    {% for item in data %}
+    <tr>
+        <td>{{ item.title }}</td>
+        <td>{{ item.category }}</td>
+        <td>{{ item.priority | priority_label }}</td>
+        <td>{{ item.created_at }}</td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+{% endblock %}
